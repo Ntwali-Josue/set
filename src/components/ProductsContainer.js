@@ -12,17 +12,17 @@ class ProductsContainer extends React.Component {
       {
         elementName: "Baccalaureate Nurse & Patient-centered Care",
         elementDescription: "Practice using caring, compassionate, culturally competent, and evidence-based practices in the roles of the baccalaureate nurse using the nursing process to provide patient/client-centered care in a variety of healthcare settings.",
-        elementID: "RN-BSN-PO1" 
+        elementID: "RN-BSN-PO2" 
       },
       {
         elementName: "Baccalaureate Nurse & Patient-centered Care",
         elementDescription: "Practice using caring, compassionate, culturally competent, and evidence-based practices in the roles of the baccalaureate nurse using the nursing process to provide patient/client-centered care in a variety of healthcare settings.",
-        elementID: "RN-BSN-PO1" 
+        elementID: "RN-BSN-PO3" 
       },
       {
         elementName: "Baccalaureate Nurse & Patient-centered Care",
         elementDescription: "Practice using caring, compassionate, culturally competent, and evidence-based practices in the roles of the baccalaureate nurse using the nursing process to provide patient/client-centered care in a variety of healthcare settings.",
-        elementID: "RN-BSN-PO1" 
+        elementID: "RN-BSN-PO4" 
       }
     ]
   }
@@ -38,12 +38,19 @@ class ProductsContainer extends React.Component {
     })
   }
 
+  deleteProduct = (elementID) => {
+    const newProducts = this.state.products.filter(product => product.elementID !== elementID)
+    this.setState({
+      products: newProducts
+    })
+  }
+
   render() {
     return (
       <div>
         <h1>Products Container</h1>
         <AddProduct addProduct={this.addProduct} />
-        <ProductsList products={this.state.products} />
+        <ProductsList products={this.state.products} deleteProductProps={this.deleteProduct} />
       </div>
     );
   }
