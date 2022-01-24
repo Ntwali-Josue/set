@@ -140,10 +140,6 @@ input {
   border: 1px solid #F0F3F6;
 }
 
-.add-product {
-  display: none;
-}
-
 .add {
   cursor: pointer;
   font-size: 30px;
