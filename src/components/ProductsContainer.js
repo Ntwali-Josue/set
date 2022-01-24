@@ -4,19 +4,19 @@ import AddProduct from "./AddProduct";
 import home from "../images/Home.svg";
 class ProductsContainer extends React.Component {
   state = {
-    products: [
-      {
-        elementName: "Baccalaureate Nurse & Patient-centered",
-        elementDescription:
-          "Practice using caring, compassionate, culturally competent, and evidence-based practices in the roles of the baccalaureate nurse using the nursing process to provide patient/client-centered care in a variety of healthcare settings.",
-        elementID: "RN-BSN-PO1",
-      },
-      {
-        elementName: "Techniques to Effective Communication",
-        elementDescription:
-          "Use a broad base of techniques to communicate effectively with clients,families, healthcare teams, and communities.",
-        elementID: "RN-BSN-PO2",
-      },
+    products: localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [
+        {
+          elementName: "Baccalaureate Nurse & Patient-centered",
+          elementDescription:
+            "Practice using caring, compassionate, culturally competent, and evidence-based practices in the roles of the baccalaureate nurse using the nursing process to provide patient/client-centered care in a variety of healthcare settings.",
+          elementID: "RN-BSN-PO1",
+        },
+        {
+          elementName: "Techniques to Effective Communication",
+          elementDescription:
+            "Use a broad base of techniques to communicate effectively with clients,families, healthcare teams, and communities.",
+          elementID: "RN-BSN-PO2",
+        },
     ],
     add: false,
   };
@@ -27,9 +27,10 @@ class ProductsContainer extends React.Component {
       elementDescription: elementDescription,
       elementID: elementID,
     };
-    this.setState({
-      products: [...this.state.products, newProduct],
-    });
+
+    const products = [...this.state.products, newProduct];
+    this.setState({ products: products });
+    localStorage.setItem("products", JSON.stringify(products));
   };
 
   deleteProduct = (elementID) => {

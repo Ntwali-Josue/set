@@ -72,13 +72,17 @@ input {
   background: #fff;
 }
 
+.product-item input:focus{
+  background: #fff;
+}
+
 .product-item:hover .d-block{
   display: block;
   cursor: pointer;
   padding-right: 20px;
 }
 
-.product-item:hover .selector {
+.product-item:hover .selector{
   background-color: #253E57;
 }
 
