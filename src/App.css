@@ -5,7 +5,7 @@ body {
 
 .App {
   background: #fff;
-  width: 1000px;
+  width: 80%;
   margin: 50px auto;
   box-shadow: 0px 3px 15px #E7ECF1B2;
   border-radius: 6px;
@@ -23,14 +23,31 @@ header {
 
 .product-item {
   display: grid;
-  grid-template-columns: 35% 45% 15%;
-  width: 900px;
-  border: 1px solid #ccc;
-  padding: 10px;
+  grid-template-columns: 3% 30% 50% 17%;
+  width: 90%;
+  border: none;
+  margin-bottom: 1px;
+  background-color: #F2F9FC;
+}
+
+.product-item:hover {
+  background-color: #fff;
+}
+
+.product-item input {
+  padding: 30px 0;
+  font-size: 15px;
+  background-color: #F2F9FC;
 }
 
 .product-name {
-  width: 90%;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.product-description {
+  text-align: center;
 }
 
 .product-id {
@@ -39,9 +56,8 @@ header {
 }
 
 .product-id input {
-  padding: 10px 0;
-  /* text-align: center; */
   width: 90%;
+  text-align: center;
 }
 
 input {
@@ -52,14 +68,23 @@ input {
   display: none;
 }
 
+.product-item:hover input{
+  background: #fff;
+}
+
 .product-item:hover .d-block{
   display: block;
   cursor: pointer;
+  padding-right: 20px;
+}
+
+.product-item:hover .selector {
+  background-color: #253E57;
 }
 
 .categories {
   display: grid;
-  grid-template-columns: 5% 30% 50% 10% 5%;
+  grid-template-columns: 5% 30% 45% 10% 10%;
   padding: 10px 0;
   width: 90%;
   margin-left: 40px;
@@ -67,9 +92,8 @@ input {
   font-size: 20px;
 }
 
-.categories img {
-  width: 60%;
-  margin: 0;
+.rn-program {
+  text-align: left;
 }
 
 .programs-outcomes { 
@@ -80,4 +104,47 @@ input {
   color: #66707F;
   font-family: 'Roboto', sans-serif;
   text-align: justify;
+}
+
+.form {
+  text-align: justify;
+  margin-left: 60px;
+  display: grid;
+  grid-template-columns: 28% 47% 10% 5%;
+}
+
+.input-style {
+  border: 1px solid #C7D4E1;
+  border-radius: 6px;
+  padding: 13px;
+}
+
+.desc-input {
+  margin: 0 10px;
+}
+
+.submit-btn {
+  border: none;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.submit-btn img {
+  width: 25px;
+}
+
+.selector {
+  background-color: #F0F3F6;
+  border: 1px solid #F0F3F6;
+}
+
+.add-product {
+  display: none;
+}
+
+.add {
+  cursor: pointer;
+  font-size: 30px;
 }

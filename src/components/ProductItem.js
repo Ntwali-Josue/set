@@ -33,6 +33,7 @@ class ProductItem extends React.Component {
 
     return (
       <div className="product-item">
+        <span className="selector"></span>
         <input
           className="product-name"
           type="text"
