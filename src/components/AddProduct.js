@@ -27,17 +27,18 @@ class AddProduct extends React.Component {
   };
 
   handleSubmit = (e) => {
+    const { elementName, elementDescription, elementID } = this.state;
     e.preventDefault();
-    this.props.addProduct(
-      this.state.elementName,
-      this.state.elementDescription,
-      this.state.elementID
-    );
-    this.setState({
-      elementName: "",
-      elementDescription: "",
-      elementID: "",
-    });
+    if (elementName && elementDescription && elementID) {
+      this.props.addProduct(elementName, elementDescription, elementID);
+      this.setState({
+        elementName: "",
+        elementDescription: "",
+        elementID: "",
+      });
+    } else {
+      alert("Please fill all fields");
+    }
   };
 
   render() {
@@ -51,6 +52,7 @@ class AddProduct extends React.Component {
             placeholder="Outcome name"
             value={this.state.elementName}
             onChange={this.handleNameChange}
+            required
           />
           <input
             type="text"
@@ -58,6 +60,7 @@ class AddProduct extends React.Component {
             placeholder="Description"
             value={this.state.elementDescription}
             onChange={this.handleDescriptionChange}
+            required
           />
           <input
             type="text"
@@ -65,6 +68,7 @@ class AddProduct extends React.Component {
             placeholder="ID"
             value={this.state.elementID}
             onChange={this.handleIDChange}
+            required
           />
           <button type="submit" className="submit-btn">
             <img src={add} alt="submit" />
