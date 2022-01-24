@@ -1,5 +1,5 @@
 import React from "react";
-
+import ProductsList from "./ProductsList";
 class ProductsContainer extends React.Component {
   state = {
     products: [
@@ -30,15 +30,7 @@ class ProductsContainer extends React.Component {
     return (
       <div>
         <h1>Products Container</h1>
-        <ul>
-          {this.state.products.map(product => (
-            <li key={product.elementID}>
-              <h2>{product.elementName}</h2>
-              <p>{product.elementDescription}</p>
-              <p>{product.elementID}</p>
-            </li>
-          ))}
-        </ul>
+        <ProductsList products={this.state.products} />
       </div>
     );
   }
