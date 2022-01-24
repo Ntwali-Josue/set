@@ -26,8 +26,6 @@ header {
   grid-template-columns: 35% 45% 15%;
   width: 900px;
   border: 1px solid #ccc;
-  /* border-radius: 5px; */
-  /* box-shadow: 0 0 5px #ccc; */
   padding: 10px;
 }
 
@@ -36,7 +34,6 @@ header {
 }
 
 .product-id {
-  /* margin-left: 5px;d */
   display: flex;
   justify-content: space-between;
 }
@@ -58,4 +55,29 @@ input {
 .product-item:hover .d-block{
   display: block;
   cursor: pointer;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: 5% 30% 50% 10% 5%;
+  padding: 10px 0;
+  width: 90%;
+  margin-left: 40px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.categories img {
+  width: 60%;
+  margin: 0;
+}
+
+.programs-outcomes { 
+  color: #253E57;
+}
+
+.desc {
+  color: #66707F;
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
 }

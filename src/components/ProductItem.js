@@ -18,17 +18,6 @@ class ProductItem extends React.Component {
     }
   };
 
-  handleFocus = () => {
-    let viewMode = {};
-    let editMode = {};
-
-    if (this.state.editing) {
-      viewMode.display = "none";
-    } else {
-      editMode.display = "none";
-    }
-  };
-
   handleTruncate = (str, maxLength = 60) => {
     if (this.state.editing === false && str.length > maxLength) {
       const shortened = str.substr(0, maxLength) + "...";
@@ -39,7 +28,7 @@ class ProductItem extends React.Component {
   };
 
   render() {
-    const { product, deleteProductProps, updateProduct } = this.props;
+    const { product, deleteProductProps, updateProductName, updateProductDescription, updateProductID } = this.props;
     const { elementName, elementDescription, elementID } = product;
 
     return (
@@ -49,7 +38,7 @@ class ProductItem extends React.Component {
           type="text"
           value={elementName}
           onChange={(e) =>
-            updateProduct(e.target.value, elementID, elementDescription)
+            updateProductName(e.target.value, elementID)
           }
         />
         <input
@@ -57,14 +46,14 @@ class ProductItem extends React.Component {
           onClick={this.handleEdit}
           value={this.handleTruncate(elementDescription)}
           onChange={(e) =>
-            updateProduct(e.target.value, elementID, elementName)
+            updateProductDescription(e.target.value, elementID)
           }
         />
         <div className="product-id">
           <input
             value={elementID}
             onChange={(e) =>
-              updateProduct(e.target.value, elementName, elementDescription)
+              updateProductID(e.target.value)
             }
           />
           <img
