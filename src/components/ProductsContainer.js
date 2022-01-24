@@ -27,16 +27,16 @@ class ProductsContainer extends React.Component {
     ]
   }
 
-  // addProduct = (elementName, elementDescription, elementID) => {
-  //   const newProduct = {
-  //     elementName: elementName,
-  //     elementDescription: elementDescription,
-  //     elementID: elementID
-  //   }
-  //   this.setState({
-  //     products: [...this.state.products, newProduct]
-  //   })
-  // }
+  addProduct = (elementName, elementDescription, elementID) => {
+    const newProduct = {
+      elementName: elementName,
+      elementDescription: elementDescription,
+      elementID: elementID
+    }
+    this.setState({
+      products: [...this.state.products, newProduct]
+    })
+  }
 
   render() {
     return (
