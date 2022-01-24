@@ -28,7 +28,13 @@ class ProductItem extends React.Component {
   };
 
   render() {
-    const { product, deleteProductProps, updateProductName, updateProductDescription, updateProductID } = this.props;
+    const {
+      product,
+      deleteProductProps,
+      updateProductName,
+      updateProductDescription,
+      updateProductID,
+    } = this.props;
     const { elementName, elementDescription, elementID } = product;
 
     return (
@@ -38,24 +44,18 @@ class ProductItem extends React.Component {
           className="product-name"
           type="text"
           value={elementName}
-          onChange={(e) =>
-            updateProductName(e.target.value, elementID)
-          }
+          onChange={(e) => updateProductName(e.target.value, elementID)}
         />
         <input
           className="product-description"
           onClick={this.handleEdit}
           value={this.handleTruncate(elementDescription)}
-          onChange={(e) =>
-            updateProductDescription(e.target.value, elementID)
-          }
+          onChange={(e) => updateProductDescription(e.target.value, elementID)}
         />
         <div className="product-id">
           <input
             value={elementID}
-            onChange={(e) =>
-              updateProductID(e.target.value)
-            }
+            onChange={(e) => updateProductID(e.target.value)}
           />
           <img
             className="d-block"
