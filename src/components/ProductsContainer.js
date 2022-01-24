@@ -36,6 +36,7 @@ class ProductsContainer extends React.Component {
         elementID: "RN-BSN-PO6",
       },
     ],
+    add: false,
   };
 
   addProduct = (elementName, elementDescription, elementID) => {
@@ -108,9 +109,15 @@ class ProductsContainer extends React.Component {
             meet the master's degree requirement of a nurse practitioner.
           </span>
           <span>RN</span>
-          <span className="add"> &#x22EE;</span>
+          <span
+            className="add"
+            onClick={() => this.setState({ add: !this.state.add })}
+          >
+            {" "}
+            &#x22EE;
+          </span>
         </div>
-        <AddProduct addProduct={this.addProduct} />
+        {this.state.add ? <AddProduct addProduct={this.addProduct} /> : null}
         <ProductsList
           products={this.state.products}
           deleteProductProps={this.deleteProduct}
