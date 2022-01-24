@@ -95,8 +95,12 @@ class ProductsContainer extends React.Component {
     return (
       <div>
         <div className="categories">
-          <img src={home} alt="home icon" />
-          <span><b>RN Program Outcomes</b></span>
+          <span>
+            <img src={home} alt="home icon" />
+          </span>
+          <span className="rn-program">
+            <b>RN Program Outcomes</b>
+          </span>
           <span className="desc">
             Description: A registered nurse, or RN, typically monitors patients,
             administers medications, keeps records, consults with healthcare
@@ -104,7 +108,7 @@ class ProductsContainer extends React.Component {
             meet the master's degree requirement of a nurse practitioner.
           </span>
           <span>RN</span>
-          <span> &#x22EE;</span>
+          <span className="add"> &#x22EE;</span>
         </div>
         <AddProduct addProduct={this.addProduct} />
         <ProductsList
