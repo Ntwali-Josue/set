@@ -8,9 +8,21 @@ class AddProduct extends React.Component {
     elementID: ""
   }
 
-  onChange = (e) => {
+  handleNameChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
+      elementName: e.target.value,
+    })
+  }
+
+  handleDescriptionChange = (e) => {
+    this.setState({
+      elementDescription: e.target.value,
+    })
+  }
+
+  handleIDChange = (e) => {
+    this.setState({
+      elementID: e.target.value,
     })
   }
 
@@ -27,9 +39,9 @@ class AddProduct extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Outcome name" value={this.state.elementName} onChange={this.onChange} />
-        <input type="text" placeholder="Description" value={this.state.elementDescription} onChange={this.onChange} />
-        <input type="text" placeholder="ID" value={this.state.elementID} onChange={this.onChange} />
+        <input type="text" placeholder="Outcome name" value={this.state.elementName} onChange={this.handleNameChange} />
+        <input type="text" placeholder="Description" value={this.state.elementDescription} onChange={this.handleDescriptionChange} />
+        <input type="text" placeholder="ID" value={this.state.elementID} onChange={this.handleIDChange} />
         <button type="submit">
           <img src={add} alt="submit" />
         </button>
