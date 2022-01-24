@@ -7,7 +7,7 @@ class ProductsList extends React.Component {
       <div className="product-list">
         <ul>
           {this.props.products.map(product => (
-            <ProductItem key={product.elementID} product={product} /> 
+            <ProductItem key={product.elementID} product={product} deleteProductProps={this.props.deleteProductProps} /> 
           ))}
         </ul>
       </div>
