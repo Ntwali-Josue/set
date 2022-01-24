@@ -45,12 +45,29 @@ class ProductsContainer extends React.Component {
     })
   }
 
+  updateProduct = (elementID, elementName, elementDescription) => {
+    const newProducts = this.state.products.map(product => {
+      if (product.elementID === elementID) {
+        return {
+          elementName: elementName,
+          elementDescription: elementDescription,
+          elementID: elementID
+        }
+      } else {
+        return product
+      }
+    })
+    this.setState({
+      products: newProducts
+    })
+  }
+
   render() {
     return (
       <div>
         <h1>Products Container</h1>
         <AddProduct addProduct={this.addProduct} />
-        <ProductsList products={this.state.products} deleteProductProps={this.deleteProduct} />
+        <ProductsList products={this.state.products} deleteProductProps={this.deleteProduct} updateProduct={this.updateProduct} />
       </div>
     );
   }
