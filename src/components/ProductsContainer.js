@@ -1,6 +1,7 @@
 import React from "react";
 import ProductsList from "./ProductsList";
 import AddProduct from "./AddProduct";
+import AddOutcome from "./AddOutcome";
 import home from "../images/Home.svg";
 class ProductsContainer extends React.Component {
   state = {
@@ -20,7 +21,7 @@ class ProductsContainer extends React.Component {
             elementID: "RN-BSN-PO2",
           },
         ],
-    add: false,
+    display: "none",
   };
 
   addProduct = (elementName, elementDescription, elementID) => {
@@ -31,7 +32,7 @@ class ProductsContainer extends React.Component {
     };
 
     const products = [...this.state.products, newProduct];
-    this.setState({ products: products });
+    this.setState({ products: products, add: false, display: "none" });
     localStorage.setItem("products", JSON.stringify(products));
   };
 
@@ -77,6 +78,12 @@ class ProductsContainer extends React.Component {
     });
   };
 
+  toggleAdd = () => {
+    this.setState({
+      add: !this.state.add,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -92,16 +99,23 @@ class ProductsContainer extends React.Component {
             administers medications, keeps records, consults with healthcare
             providers, educates patients and more.
           </span>
-          <span>RN</span>
-          <span
-            className="add"
-            onClick={() => this.setState({ add: !this.state.add })}
-          >
-            {" "}
-            &#x22EE;
-          </span>
+          {
+            this.state.display === "none" ? (
+              <span className="d-flex">
+              <span>RN</span>
+              <span
+                className="add"
+                onClick={() => this.setState({ display: !this.state.display })}
+              >
+                {" "}
+                &#x22EE;
+              </span>
+            </span> ) : ( 
+              <AddOutcome style={{display: this.state.display}} toggleAdd={this.toggleAdd} />
+            )
+          }
         </div>
-        {this.state.add ? <AddProduct addProduct={this.addProduct} /> : null}
+        {this.state.add? <AddProduct addProduct={this.addProduct} /> : null}
         <ProductsList
           products={this.state.products}
           deleteProductProps={this.deleteProduct}
