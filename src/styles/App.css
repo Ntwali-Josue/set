@@ -98,7 +98,7 @@ input {
   background-color: #fff;
 }
 
-.product-item:nth-child(1) .d-block{
+.product-item ~ .d-block{
   display: block;
   cursor: pointer;
   padding-right: 20px;
@@ -106,7 +106,7 @@ input {
 
 .categories {
   display: grid;
-  grid-template-columns: 5% 30% 40% 10% 10%;
+  grid-template-columns: 5% 30% 45% 20%;
   padding: 10px 0;
   width: 90%;
   margin-left: 40px;
@@ -169,4 +169,23 @@ input {
 
 .plus {
   font-size: 20px;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-outcome {
+  cursor: pointer;
+}
+
+.add-outcome button {
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  margin-right: 5px;
+  padding: 15px 10px;
 }
