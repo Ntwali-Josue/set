@@ -4,20 +4,22 @@ import AddProduct from "./AddProduct";
 import home from "../images/Home.svg";
 class ProductsContainer extends React.Component {
   state = {
-    products: localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [
-        {
-          elementName: "Baccalaureate Nurse & Patient-centered",
-          elementDescription:
-            "Practice using caring, compassionate, culturally competent, and evidence-based practices in the roles of the baccalaureate nurse using the nursing process to provide patient/client-centered care in a variety of healthcare settings.",
-          elementID: "RN-BSN-PO1",
-        },
-        {
-          elementName: "Techniques to Effective Communication",
-          elementDescription:
-            "Use a broad base of techniques to communicate effectively with clients,families, healthcare teams, and communities.",
-          elementID: "RN-BSN-PO2",
-        },
-    ],
+    products: localStorage.getItem("products")
+      ? JSON.parse(localStorage.getItem("products"))
+      : [
+          {
+            elementName: "Baccalaureate Nurse & Patient-centered",
+            elementDescription:
+              "Practice using caring, compassionate, culturally competent, and evidence-based practices in the roles of the baccalaureate nurse using the nursing process to provide patient/client-centered care in a variety of healthcare settings.",
+            elementID: "RN-BSN-PO1",
+          },
+          {
+            elementName: "Techniques to Effective Communication",
+            elementDescription:
+              "Use a broad base of techniques to communicate effectively with clients,families, healthcare teams, and communities.",
+            elementID: "RN-BSN-PO2",
+          },
+        ],
     add: false,
   };
 
@@ -88,8 +90,7 @@ class ProductsContainer extends React.Component {
           <span className="desc">
             Description: A registered nurse, or RN, typically monitors patients,
             administers medications, keeps records, consults with healthcare
-            providers, educates patients and more. They typically do not need to
-            meet the master's degree requirement of a nurse practitioner.
+            providers, educates patients and more.
           </span>
           <span>RN</span>
           <span
