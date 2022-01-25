@@ -86,9 +86,27 @@ input {
   background-color: #253E57;
 }
 
+.product-item:nth-child(1) .selector{
+  background-color: #253E57;
+}
+
+.product-item:nth-child(1) input{
+  background-color: #fff;
+}
+
+.product-item:nth-child(1) {
+  background-color: #fff;
+}
+
+.product-item:nth-child(1) .d-block{
+  display: block;
+  cursor: pointer;
+  padding-right: 20px;
+}
+
 .categories {
   display: grid;
-  grid-template-columns: 5% 30% 45% 10% 10%;
+  grid-template-columns: 5% 30% 40% 10% 10%;
   padding: 10px 0;
   width: 90%;
   margin-left: 40px;
@@ -147,4 +165,8 @@ input {
 .add {
   cursor: pointer;
   font-size: 30px;
+}
+
+.plus {
+  font-size: 20px;
 }
